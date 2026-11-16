@@ -5,3 +5,4 @@ osmnx
 ortools==9.15.6755
 pandas
 geopandas
+googlemaps
