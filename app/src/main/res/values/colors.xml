@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base palette -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_100">#FFF6F8FB</color>
+
+    <!-- Brand colors -->
+    <color name="primary">#2F6BFF</color>
+    <color name="primary_glow">#2672FF0F</color> <!-- 6% opacity for glow -->
+    <color name="success">#12B981</color>
+    <color name="warning">#F59E0B</color>
+
+    <!-- Text -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#5B6475</color>
+    <color name="text_disabled">#A0A8B8</color>
+
+    <!-- Glass tokens -->
+    <color name="glass_fill">#88FFFFFF</color> <!-- 0.55 alpha -->
+    <color name="glass_fill_elevated">#B8FFFFFF</color> <!-- 0.72 alpha -->
+    <color name="glass_border_inner">#BFFFFFFF</color> <!-- 0.75 alpha -->
+    <color name="glass_border_outer">#0C141E3C</color> <!-- 6% opacity -->
+</resources>

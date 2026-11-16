@@ -1,0 +1,8 @@
+id,latitude,longitude,demand
+Depot,40.712776,-74.005974,0
+CustomerA,40.730610,-73.935242,10
+CustomerB,40.758896,-73.985130,8
+CustomerC,40.761432,-73.977621,12
+CustomerD,40.748817,-73.985428,5
+CustomerE,40.706192,-74.009160,7
+CustomerF,40.729515,-73.996460,9

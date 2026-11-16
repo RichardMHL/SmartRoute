@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SmartRoute</string>
+    <string name="login_title">Welcome Back</string>
+    <string name="login_email_hint">Email address</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_cta">Sign In</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="optimize_route_cta">Optimize New Route</string>
+    <!-- Add other UI strings as needed -->
+</resources>

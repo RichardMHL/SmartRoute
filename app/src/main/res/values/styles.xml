@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base widget styles -->
+    <style name="Widget.SmartRoute.GlassCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/glass_fill</item>
+        <item name="strokeColor">@color/glass_border_inner</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:background">@drawable/glass_card</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:radius">@dimen/radius_card</item>
+    </style>
+
+    <style name="Widget.SmartRoute.GlassButton.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:background">@drawable/glass_button_primary</item>
+        <item name="android:radius">@dimen/radius_button</item>
+    </style>
+    <style name="Widget.SmartRoute.GlassButton.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:background">@drawable/glass_button_secondary</item>
+        <item name="android:radius">@dimen/radius_button</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+streamlit
+streamlit-folium
+folium
+osmnx
+ortools==9.15.6755
+pandas
+geopandas
