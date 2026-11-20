@@ -111,7 +111,29 @@ html, body, [data-testid="stAppViewContainer"], .stApp {
 
 /* Hide Streamlit default clutter */
 header[data-testid="stHeader"] {
-  background: transparent !important;
+  background: rgba(250, 247, 242, 0.94) !important;
+  border-bottom: 1px solid rgba(107, 23, 40, 0.18) !important;
+}
+
+header[data-testid="stHeader"] button,
+header[data-testid="stHeader"] button * {
+  color: var(--text-on-burgundy) !important;
+}
+
+header[data-testid="stHeader"] button {
+  background: var(--clay-burgundy) !important;
+  border-radius: var(--r-button) !important;
+}
+
+[data-testid="stAppDeployButton"] button,
+[data-testid="stAppDeployButton"] button * {
+  color: var(--text-on-burgundy) !important;
+}
+
+[data-testid="stAppDeployButton"] button {
+  background: var(--clay-burgundy) !important;
+  border: 1px solid var(--clay-burgundy) !important;
+  border-radius: var(--r-button) !important;
 }
 #MainMenu, footer {
   visibility: hidden !important;
@@ -504,8 +526,8 @@ iframe {
 .stTabs [role="tabpanel"] [data-testid="stCaptionContainer"] *,
 .stTabs [role="tabpanel"] [data-testid="stMetric"],
 .stTabs [role="tabpanel"] [data-testid="stMetric"] * {
-  color: var(--text-on-burgundy) !important;
-  text-shadow: 0 1px 3px rgba(43, 6, 16, 0.9) !important;
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
 }
 
 body [data-testid="stSidebar"] * {
@@ -565,7 +587,30 @@ body [data-testid="stSidebar"] .clay-sidebar-label {
   box-shadow: var(--clay-shadow-burgundy);
 }
 
-/* Keep labels and headings readable on the ivory tab panels. */
+/* Unboxed main-area copy sits over the photo background. */
+[data-testid="stMain"] > div [data-testid="stWidgetLabel"],
+[data-testid="stMain"] > div [data-testid="stWidgetLabel"] *,
+[data-testid="stMain"] > div [data-testid="stCaptionContainer"],
+[data-testid="stMain"] > div [data-testid="stCaptionContainer"] *,
+[data-testid="stMain"] > div [data-testid="stCheckbox"] label,
+[data-testid="stMain"] > div [data-testid="stCheckbox"] label * {
+  color: var(--text-on-burgundy) !important;
+  text-shadow: 0 1px 3px rgba(43, 6, 16, 0.9) !important;
+}
+
+/* Keep all text on opaque ivory tab panels dark and high contrast. */
+.stTabs [role="tabpanel"],
+.stTabs [role="tabpanel"] p,
+.stTabs [role="tabpanel"] span,
+.stTabs [role="tabpanel"] label,
+.stTabs [role="tabpanel"] [data-testid="stMarkdownContainer"],
+.stTabs [role="tabpanel"] [data-testid="stMarkdownContainer"] *,
+.stTabs [role="tabpanel"] [data-testid="stCheckbox"] label,
+.stTabs [role="tabpanel"] [data-testid="stCheckbox"] label * {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
 .stTabs [role="tabpanel"] h2,
 .stTabs [role="tabpanel"] h2 *,
 .stTabs [role="tabpanel"] h3,
