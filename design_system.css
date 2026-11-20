@@ -310,7 +310,8 @@ p, span, label, [data-testid="stWidgetLabel"] label, [data-testid="stMarkdownCon
 }
 
 /* Each tab content is housed in an opaque Ivory Clay Card so all contents are crisp */
-.stTabs [data-baseweb="tab-panel"] {
+.stTabs [data-baseweb="tab-panel"],
+.stTabs [role="tabpanel"] {
   background: rgba(250, 247, 242, 0.96) !important;
   border-radius: var(--r-card) !important;
   box-shadow: var(--clay-shadow-ivory) !important;
@@ -322,7 +323,9 @@ p, span, label, [data-testid="stWidgetLabel"] label, [data-testid="stMarkdownCon
 
 /* Tab Panel Headings */
 .stTabs [data-baseweb="tab-panel"] h2,
-.stTabs [data-baseweb="tab-panel"] h3 {
+.stTabs [data-baseweb="tab-panel"] h3,
+.stTabs [role="tabpanel"] h2,
+.stTabs [role="tabpanel"] h3 {
   color: var(--clay-burgundy) !important;
   font-weight: 800 !important;
   margin-top: 0 !important;
