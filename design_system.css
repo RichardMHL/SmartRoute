@@ -725,3 +725,9 @@ body [data-testid="stSidebar"] [data-testid="stIconMaterial"] {
 [data-testid="stExpander"] summary:hover {
   color: var(--clay-burgundy) !important;
 }
+
+.stTabs [role="tabpanel"] .stButton > button,
+.stTabs [role="tabpanel"] .stButton > button p,
+.stTabs [role="tabpanel"] .stButton > button span {
+  color: var(--text-on-burgundy) !important;
+}
