@@ -550,15 +550,48 @@ body [data-testid="stSidebar"] .clay-sidebar-label {
   text-transform: uppercase;
 }
 
-body [data-testid="stSidebar"] .clay-sidebar-title {
-  margin: 0;
-  color: var(--clay-burgundy) !important;
-  font-family: var(--font-script) !important;
-  font-size: 1.55rem !important;
-  font-weight: 900 !important;
+.route-breakdown-title {
+  display: block;
+  margin: 1.35rem 0 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--r-input);
+  background: linear-gradient(135deg, var(--clay-burgundy) 0%, var(--clay-burgundy-light) 100%);
+  color: var(--text-on-burgundy) !important;
+  font-family: var(--font-display) !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
+  text-shadow: 0 1px 2px rgba(43, 6, 16, 0.45) !important;
+  box-shadow: var(--clay-shadow-burgundy);
 }
 
-.sr-progress-label {
+/* Keep labels and headings readable on the ivory tab panels. */
+.stTabs [role="tabpanel"] h2,
+.stTabs [role="tabpanel"] h2 *,
+.stTabs [role="tabpanel"] h3,
+.stTabs [role="tabpanel"] h3 *,
+.stTabs [role="tabpanel"] h4,
+.stTabs [role="tabpanel"] h4 *,
+.stTabs [role="tabpanel"] h5,
+.stTabs [role="tabpanel"] h5 *,
+.stTabs [role="tabpanel"] h6,
+.stTabs [role="tabpanel"] h6 *,
+.stTabs [role="tabpanel"] [data-testid="stWidgetLabel"],
+.stTabs [role="tabpanel"] [data-testid="stWidgetLabel"] *,
+.stTabs [role="tabpanel"] [data-testid="stCaptionContainer"],
+.stTabs [role="tabpanel"] [data-testid="stCaptionContainer"] *,
+.stTabs [role="tabpanel"] [data-testid="stMetric"],
+.stTabs [role="tabpanel"] [data-testid="stMetric"] * {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+.stTabs [role="tabpanel"] [data-testid="stMetricValue"],
+.stTabs [role="tabpanel"] [data-testid="stMetricLabel"] {
+  color: var(--clay-burgundy-deep) !important;
+}
+
+
   display: block;
   margin: 0.65rem 0 0.35rem;
   padding: 0.65rem 0.9rem;
@@ -581,4 +614,66 @@ div[data-testid="stProgress"] {
 [data-testid="stIconMaterial"],
 body [data-testid="stSidebar"] [data-testid="stIconMaterial"] {
   font-family: "Material Symbols Rounded" !important;
+}
+
+/* ==========================================================================
+   Predictions Tab – ETA Cards & Segment Breakdown
+   ========================================================================== */
+.pred-vehicle-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.2rem 0 0.8rem;
+  padding: 0.85rem 1.1rem;
+  background: linear-gradient(135deg, rgba(255, 253, 249, 0.96) 0%, rgba(247, 231, 232, 0.96) 100%);
+  border-radius: var(--r-card);
+  box-shadow: var(--clay-shadow-ivory);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+}
+
+.pred-vehicle-badge {
+  display: inline-grid;
+  place-items: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--r-pill);
+  background: var(--clay-burgundy);
+  color: var(--text-on-burgundy) !important;
+  font-family: var(--font-family);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: var(--clay-shadow-burgundy);
+  text-shadow: none !important;
+}
+
+.pred-vehicle-summary {
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   Alternative Routes – Clay Styled Expanders & Metrics
+   ========================================================================== */
+[data-testid="stExpander"] {
+  background: rgba(255, 253, 249, 0.96) !important;
+  border-radius: var(--r-card) !important;
+  border: 1.5px solid rgba(107, 23, 40, 0.16) !important;
+  box-shadow: var(--clay-shadow-ivory) !important;
+  margin-bottom: 1rem !important;
+}
+
+[data-testid="stExpander"] summary {
+  font-family: var(--font-family) !important;
+  font-weight: 800 !important;
+  color: var(--clay-burgundy-deep) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+[data-testid="stExpander"] summary:hover {
+  color: var(--clay-burgundy) !important;
 }

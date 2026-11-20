@@ -38,9 +38,18 @@
    * Objective: minimise total travelled distance (hence fuel cost = distance × fuel_price).
    * Constraints: each selected delivery location is visited exactly once, each vehicle starts/ends at the depot, optional vehicle capacity.
 4. **Result visualisation** – Streamlit displays:
-   * A Folium map with the recommended route (coloured per vehicle) and, when available, a separately toggleable dashed alternative route; only selected stops are marked.
-   * Per-vehicle stop order, total distance, and fuel cost for the primary and alternative routes.
-   * An alternative route calculation, enabled by default, with total distance and estimated fuel cost. The alternative search is capped at 5 seconds; when OR-Tools is unavailable, the greedy fallback varies stop order when possible.
+   * A Folium map with a visible color key for the recommended route (colored per vehicle) and separately toggleable dashed alternatives (Alternative 1, Alternative 2, etc.); only selected stops are marked.
+   * Per-vehicle stop order, total distance, estimated completion time, average driving speed, and fuel cost for recommended and alternative routes. Durations automatically scale from minutes and hours to days, weeks, months, or years. The Output tab shows the summary; Predictions shows per-stop ETAs and segment travel durations.
+   * Configurable alternative routes calculation (choose 1 to 5 alternatives), ranked strictly from shortest to longer (Alternative 1 is the second-shortest valid route).
+   * Arrival-time predictions and estimated speeds based on fictional historical traffic patterns across different times of day. Completion time includes the illustrative service time at intermediate stops; speed and traffic are not live estimates.
+   * Routes with up to 6 deliveries and 3 vehicles are solved and ranked exactly, avoiding the optimizer wait for small inputs. Larger problems use OR-Tools with a 3-second primary search and up to three 1-second alternative searches. Total time also depends on the selected distance/geometry provider and network latency, so a fixed end-to-end guarantee is not possible for remote services.
+
+## Large CSVs and performance
+* `app.py` defers its pandas import until a CSV is uploaded; solver and GIS work stay lazy until route calculation is requested.
+* CSV data is parsed and validated once per uploaded file in the current session. All valid rows are retained; large-file previews show 1,000 rows, and the full dataset remains available in the Data tab.
+* For files above 1,000 rows, search the depot and delivery IDs to select rows without sending every option to the browser at once. Selections from separate searches are retained.
+* Routing uses a dense distance matrix. If the selected locations would require more than 128 MiB for that matrix, route calculation is disabled with an explanation; the uploaded data is not truncated.
+* The OpenStreetMap distance matrix runs shortest-path searches only from selected stops, rather than from every node in the downloaded road graph. Repeating an unchanged route calculation uses cached distance and optimization results.
 
 ---
 
