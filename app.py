@@ -158,7 +158,7 @@ def get_route_shapes(df, routes, routing_provider, api_key=None):
 
 
 @st.cache_data(show_spinner=False)
-def load_app_assets():
+def load_app_assets(asset_signatures):
     """Load and base64-encode UI assets once across all user reruns."""
     base_dir = pathlib.Path(__file__).parent
     css_text = ""
@@ -180,7 +180,18 @@ def load_app_assets():
 
 
 # Load cached design system assets (CSS, background canvas, logo)
-css_text, bg_base64, logo_b64 = load_app_assets()
+asset_root = pathlib.Path(__file__).parent
+asset_signatures = tuple(
+    (path.name, path.stat().st_mtime_ns, path.stat().st_size)
+    if path.exists()
+    else (path.name, None, None)
+    for path in (
+        asset_root / "design_system.css",
+        asset_root / "background.jpg",
+        asset_root / "logo.jpg",
+    )
+)
+css_text, bg_base64, logo_b64 = load_app_assets(asset_signatures)
 if css_text:
     st.markdown(f"<style>{css_text}</style>", unsafe_allow_html=True)
 
